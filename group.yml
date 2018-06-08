@@ -1,0 +1,12 @@
+--- #This is Farkhods playbook
+- hosts: all
+  become: yes
+  become_method: sudo 
+  connection: ssh
+  tasks:
+    - name: Add a group
+      group:
+        name: sales
+        state: present    
+        gid:  10110
+  

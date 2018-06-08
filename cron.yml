@@ -1,0 +1,25 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo 
+  tasks: 
+    - name: Add bob if does not exist
+      user:
+        name: bob
+      ignore_errors: yes 
+
+
+    - name: Take a backup of /etc
+      cron:
+        name: Per managers request take a backup of etc on Sunday 2 am
+        minute: 59
+        hour:  1 
+        weekday: 0
+        job: "cp -r /etc/ /mnt"
+        user: "{{ item  }}"
+        state:  absent   
+      ignore_errors: yes
+      with_items: 
+        - root
+        - bob
+

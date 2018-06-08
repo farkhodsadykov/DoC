@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo 
+  gather_facts: no
+  tasks: 
+    - name: Get IP Information
+      debug:
+        msg: "The ip address is {{ ansible_default_ipv4.netmask }} "
+
+
+    - name: Get MAC address
+      debug: 
+         msg: "The mac address is {{ ansible_default_ipv4.macaddress  }}"
+

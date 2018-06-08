@@ -1,0 +1,6 @@
+[client]
+159.89.232.254
+159.89.232.106
+165.227.122.72
+165.227.220.72
+host3 ansible_host=165.227.210.205 ansible_user=john ansible_port=22

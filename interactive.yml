@@ -1,0 +1,25 @@
+---
+- hosts: "{{ machine }}"
+  become: yes
+  become_method: sudo 
+  vars:
+   inventory: "{{ inventory_hostname }}"
+  vars_prompt:
+    - name: machine
+      prompt: "What machine would you like to install to inventory? " 
+      private: no 
+    - name: package
+      prompt: "What package would like to install? "
+      private: no
+
+  tasks:
+    - name: Install package
+      package: name="{{ package }}" state=installed
+
+    - name: Print out the list
+      debug:
+        msg: "{{ inventory }}"
+
+
+
+

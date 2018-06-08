@@ -1,0 +1,12 @@
+--- #This is Farkhod's playbook
+- hosts: all
+  tasks:
+    - name: 
+      command: w
+      register: users
+
+
+
+    - name: Print out
+      debug:
+        msg: "{{ users.stdout }}"

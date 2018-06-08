@@ -1,0 +1,16 @@
+---
+- hosts: all 
+  become: yes
+  become_method: sudo 
+  pre_tasks:
+    - name: Waiting
+      command: "uptime >> /tmp/time.log "
+  tasks:
+    - name: Run seq command
+      shell: "seq 9999 >> /dev/null" 
+  post_tasks: 
+    - name: Done
+      command: "uptime >> /tmp/time.log"
+
+
+

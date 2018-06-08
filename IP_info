@@ -1,0 +1,34 @@
+
+PLAY [all] ****************************************************************************
+
+TASK [Gathering Facts] ****************************************************************
+ok: [web]
+ok: [165.227.220.72]
+ok: [165.227.122.72]
+ok: [host3]
+ok: [159.89.232.106]
+
+TASK [Get IP Information] *************************************************************
+ok: [web] => {
+    "msg": "The ip address is 159.89.232.254 "
+}
+ok: [159.89.232.106] => {
+    "msg": "The ip address is 159.89.232.106 "
+}
+ok: [165.227.122.72] => {
+    "msg": "The ip address is 165.227.122.72 "
+}
+ok: [165.227.220.72] => {
+    "msg": "The ip address is 165.227.220.72 "
+}
+ok: [host3] => {
+    "msg": "The ip address is 165.227.210.205 "
+}
+
+PLAY RECAP ****************************************************************************
+159.89.232.106             : ok=2    changed=0    unreachable=0    failed=0   
+165.227.122.72             : ok=2    changed=0    unreachable=0    failed=0   
+165.227.220.72             : ok=2    changed=0    unreachable=0    failed=0   
+host3                      : ok=2    changed=0    unreachable=0    failed=0   
+web                        : ok=2    changed=0    unreachable=0    failed=0   
+
